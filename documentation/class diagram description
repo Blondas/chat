@@ -1,0 +1,34 @@
+1. startConversation(sender, receivers[])
+konstruktor, tworzy pusta wiadomosc, ktora:
+- w polu parent ma NULL
+- ma nadawce i odbiorcow
+
+2. reply(text)
+a)Istniejacy obiekt Messge uzywajac danych ze swoich pol tworzy nowy obiekt Message. nowy obiekt ma ustawione:
+- parent id
+- sender
+-receivers
+-text
+b)odpala funkcje sendMessage()
+
+3. exit conversation(User)
+a)Istniejacy obiekt Message uzywajac danych ze swoich pol tworzy nowy obiekt Message. nowy obiekt ma ustawione:
+- parentId
+-sender 
+-recivers
+// UWAGA: funckja szuka Usera wskazanego w parametrze funkcjii w polach sender i receivers i nastepnie usuwa go stamtad. 
+- text jest pusy
+b) odpala funkcje sendMessage()
+
+4. addNewReceiver(User)
+a)Istniejacy obiekt Message uzywajac danych ze swoich pol tworzy nowy obiekt Message. nowy obiekt ma ustawione:
+- parentId
+-sender 
+-recivers
+// UWAGA: funckja dodajeUsera wskazanego w parametrze funkcjiido pola receivers. 
+- text jest pusy
+b) odpala funkcje sendMessage()
+
+5. sendMessage(string = NULL)
+- ustawia pole text (gdy text w parametrze != null)
+- wysyla wiadomosc czyli propaguje sie do userow wskazanych w sender i receivers
