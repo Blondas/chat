@@ -16,14 +16,14 @@
 			<div id="regForm">
 			<form action="register.do" name="regForm" onsubmit="return validateForm()" method="post">
 				<br>Username: <input type="text" name="userName">
-				<br>Password: <input type="password" name="pass">
-				<br>Re-type password: <input type="password" name="rePass">
-				<br>Forename: <input type="text" name="forname">
+			    <br>Password: <input type="password" name="pass">
+				<br>Re-type password: <input type="password" name="rePass"> 
+				<br>Forename: <input type="text" name="forename">
 				<br>Surname: <input type="text" name="surname">
 				<br>Age: <input type="text" name="age">
 				<br>Gender: 
 				<input type="radio" name="sex" value="male">Male
-				<input type="radio" name="sex" value="female">Female
+				<input type="radio" name="sex" value="female">Female 
 				<br><br><input type="submit" value="submit"/>
 			</form>
 			<br><a href="/Login/">Back</a>

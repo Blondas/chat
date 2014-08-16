@@ -77,11 +77,11 @@ public class User //implements java.io.Serializable
 		this.id = id;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "gender_id")
-	public Gender getGender() {
-		return this.gender;
-	}
+	//@ManyToOne(fetch = FetchType.LAZY)
+	//@JoinColumn(name = "gender_id")
+	//public Gender getGender() {
+	//	return this.gender;
+//	}
 
 	public void setGender(Gender gender) {
 		this.gender = gender;
@@ -123,7 +123,7 @@ public class User //implements java.io.Serializable
 		this.age = age;
 	}
 
-	@Column(name = "logged_in")
+	/* @Column(name = "logged_in")
 	public Boolean getLoggedIn() {
 		return this.loggedIn;
 	}
@@ -181,5 +181,5 @@ public class User //implements java.io.Serializable
 	public void setUsersForFriendId(Set<User> usersForFriendId) {
 		this.usersForFriendId = usersForFriendId;
 	}
-
+ */
 }
