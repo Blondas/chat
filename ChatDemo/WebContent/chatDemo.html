@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Chat demo</title>
+</head>
+<body>
+	<form>
+		<input id="textMessage" type="text">
+		<input onclick="sendMessage()" value="Send message" type="button">
+	</form>
+	<br>
+	<textarea id="messagesTextArea" rows="10" cols="50">
+	</textarea>
+	
+	<script type="text/javascript">
+	var webSocket = new WebSocket("ws://localhost:8080/ChatDemo/server");
+	var messsagesTextArea = document.getElementById("messagesTextArea");
+	
+	webSocket.onopen = function(message){
+	messagesTextArea.value += "Server connect... \n";
+	}
+	
+	webSocket.onclose = function(message){
+		webSocket.send("client disconnected");
+		messsagesTextArea.value += "Server disconnected \n";
+	}
+	
+	webSocket.onerror = function(message){
+		messsagesTextArea.value += "error... \n";
+	}
+	
+	webSocket.onmessage = function(message){
+		messagesTextArea.value += "receive from server ==> " + message.data + "\n";
+	}
+	
+	function sendMessage() {
+		if (textMessage.value != "close"){
+		webSocket.send(textMessage.value);
+		messagesTextArea.value += "Send to server ==> " + textMessage.value + "\n";
+		textMessage.value="";
+		} else webSocket.close();
+				
+	}
+	</script>
+</body>
+</html>
